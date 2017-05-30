@@ -46,7 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-/*
+# Web app settings
 !www/*.html
 !www/*.ico
 !www/css

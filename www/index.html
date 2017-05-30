@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+<head>
+
+    <title>Tab View Template</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Include jQuery and JQuery Mobile Mobile stylesheets and libraries -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    <script src='cordova.js'></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/utils.js"></script>
+    <script src="js/userMgmt.js"></script>
+    <script src="js/spotMgmt.js"></script>
+    <script src="js/testMethods.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/map_view.js"></script>
+    <script src="js/spotWindow.js"></script>       
+    <script src="resources/strings.js"></script>       
+
+</head>
+
+<body>
+
+    <div id="splashscreen" class='ui-loader heavy'>
+        App Framework - Tab View
+        <br>
+        <br>
+        <span class='ui-icon ui-icon-loading spin'></span>
+        <h1>Starting app</h1>
+    </div>
+
+    <div data-role="page" id="ViewPage">
+        <div data-role="header" data-position="fixed">
+            <h1>This is Header</h1>
+        </div>
+        
+        <div data-role="main" class="ui-content" id="map_panel" style="position:absolute;width:100%;height:100%;">
+            <!-- Spot Description popup -->
+            <div data-role="popup" id="spotViewPopup" data-arrow="false" data-position-to="#footer" data-dismissible="false">
+                
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-nodisc-icon ui-alt-icon ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>  
+                
+                <table style="width:100%" id="spotfull">
+                    <tr>
+                        <td rowspan="3" id="spoticon">
+                            <img src="img/spot1.jpg" height="25%">
+                        </td>
+                        <td colspan="4" id="spotname">
+                            <a href="#" ></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" id="spotdescr">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="fa-stack">
+                              <i class="fa fa-circle fa-stack-2x" style="color:blue;"></i>
+                              <i class="fa fa-thumbs-up fa-stack-1x fa-inverse" ></i>
+                            </span><span id="likes"></span>
+                        </td>
+                        <td>
+                            <span class="fa-stack">
+                              <i class="fa fa-comment fa-stack-2x" style="color:blue;"></i>
+                            </span><span id="comments"></span>
+                        </td>
+                        <td>
+                            <span class="fa-stack">
+                              <i class="fa fa-dot-circle-o fa-stack-2x" style="color:blue;"></i>
+                            </span><span id="viewers"></span>
+                        </td>
+                        <td id="spotowner">
+                        </td>
+                    </tr>
+                    
+                    
+                </table>
+                
+            </div>
+            
+            
+            
+        </div>
+
+        <div data-role="footer" data-position="fixed" id="footer">
+            <div data-role="navbar" class="ui-state-persist">
+                <ul id="tab_bar">
+                    <a href="#" class="ui-btn-active"   >Map</a>
+                    <a href="#"                         >Spots</a>
+                    <a href="#"                         ></a>
+                    <a href="#"                         >Messages</a>
+                    <a href="#"                         >Profile</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<script>
+
+    initApplication();
+    
+    
+    
+    
+    //    var map;
+    function initMap() {
+        
+        console.log("**** InitMap ***");
+        mapManipulator.showMap();
+        
+    }
+</script>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBd-DKDRL9vt2SALD68S0CBuzLGE_q0tq4&callback=initMap" async defer ></script>    
+    
+    
+    
+    
+</body>
+
+</html>
