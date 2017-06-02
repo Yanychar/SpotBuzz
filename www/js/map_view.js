@@ -74,7 +74,7 @@ var mapManipulator = {
         };    
 
         var map = new google.maps.Map( 
-                                    document.getElementById("map_panel"), 
+                                    document.getElementById("mapview"), 
                                     myOptions );
         
         return map;

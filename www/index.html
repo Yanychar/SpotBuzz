@@ -46,7 +46,7 @@
             <h1>This is Header</h1>
         </div>
         
-        <div data-role="main" class="ui-content" id="map_panel" style="position:absolute;width:100%;height:100%;">
+        <div data-role="main" id="mainpanel" style="position:absolute;width:100%;height:100%;">
             <!-- Spot Description popup -->
             <div data-role="popup" id="spotViewPopup" data-arrow="false" data-position-to="#footer" data-dismissible="false">
                 
@@ -91,6 +91,21 @@
                 
             </div>
             
+            <div id="mapview" class="ui-content" style="height: 100%; padding: 0;margin:0;">
+              <h1>First Page</h1>  
+            </div>
+            <div id="spotsview" class="ui-content" >
+              <h1>Second Page</h1>  
+            </div>
+            <div id="commentsview" class="ui-content" >
+              <h1>Third Page</h1>  
+            </div>
+            <div id="messagesview" class="ui-content" >
+              <h1>Fourth Page</h1>  
+            </div>
+            <div id="profileview" class="ui-content" >
+              <h1>5th Page</h1>  
+            </div>
             
             
         </div>
@@ -98,11 +113,11 @@
         <div data-role="footer" data-position="fixed" id="footer">
             <div data-role="navbar" class="ui-state-persist">
                 <ul id="tab_bar">
-                    <a href="#" class="ui-btn-active"   >Map</a>
-                    <a href="#"                         >Spots</a>
-                    <a href="#"                         ></a>
-                    <a href="#"                         >Messages</a>
-                    <a href="#"                         >Profile</a>
+                    <a href="#mapview" >	</a>
+                    <a href="#spotsview"                    ></a>
+                    <a href="#commentsview"                  ></a>
+                    <a href="#messagesview"                  ></a>
+                    <a href="#profileview"                   ></a>
                 </ul>
             </div>
         </div>
@@ -119,7 +134,7 @@
     function initMap() {
         
         console.log("**** InitMap ***");
-        mapManipulator.showMap();
+//        mapManipulator.showMap();
         
     }
 </script>
