@@ -41,7 +41,7 @@ function setupNavbar( activateTab ) {
     var aEl = $("[data-role=navbar] ul").children().first();
     
     for ( i = 0; i < tabsList.length;i++ ) {
-        aEl.text( tabsList[ i ] );
+//        aEl.text( tabsList[ i ] );
         aEl = aEl.next();
     }
     
