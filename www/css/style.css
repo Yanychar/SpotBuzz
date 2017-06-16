@@ -54,3 +54,54 @@
     left: 0;
 }
 
+
+.nav-glyphish-example .ui-btn .ui-btn-inner {
+    padding-top: 40px !important; 
+}
+
+.nav-glyphish-example .ui-btn .ui-icon { 
+    width: 45px!important; 
+    height: 35px!important; 
+    margin-left: -24px !important; 
+    box-shadow: none!important; 
+    -moz-box-shadow: none!important; 
+    -webkit-box-shadow: none!important;
+    -webkit-border-radius: none !important;
+    border-radius: none !important; 
+}
+
+#recent .ui-icon { 
+    background: url(icon/18-envelope.png) 50% 50% no-repeat;
+    background-size: 32px 32px;
+}
+
+.ui-icon-custom:after {
+background-image: url("http://tools.uisko.com/18-envelope.png");
+}
+
+.ui-icon-taifun:after {
+    background-image: url("icon/envelope.png");
+}
+
+.ui-icon-map:after {
+    background-image: url( "../icon/globe.png" );
+}
+
+.ui-icon-spot:after {
+    background-image: url( "../icon/marker.png" );
+}
+
+.ui-icon-comments:after {
+    background-image: url( "../icon/cloud.png" );
+}
+
+.ui-icon-messages:after {
+    background-image: url( "../icon/envelope.png" );
+}
+
+.ui-icon-profile:after {
+    background-image: url( "../icon/gear.png" );
+}
+
+
+
