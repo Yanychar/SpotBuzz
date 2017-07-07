@@ -144,7 +144,7 @@ var mapManipulator = {
             gm = mapManipulator.createAndDrawMarker( mapManipulator.myMap, 
                     spList[ i ]
             );
-
+/*
             google.maps.event.addListener( gm, 'mouseover', function( event ){
                 
                 console.log( "WILL BE SHOWN: " + this.title + ", " + this.customData.owner.getFullFNfirst()); 
@@ -153,15 +153,22 @@ var mapManipulator = {
                 
 
             });            
-/*            
+*/            
             google.maps.event.addListener( gm, 'click', function( event ){
+                
+//                console.log( "Click event: " + JSON.stringify( event )); 
+                            
+                if ( event.ta.isTrusted ){
 
-                if ( event.Ba.isTrusted ){
-                    console.log( "Marker clicked: " + this.title );
+                console.log( "WILL BE SHOWN: " + this.title + ", " + this.customData.owner.getFullFNfirst()); 
+
+                spotWindow.show( this );
+                    
+                
                 }
 
             });            
-*/            
+            
         }
     },
 

@@ -107,5 +107,22 @@ var testComm = {
         }
         
     },
+
+    testGetStatus:  function( id, successFunc, failedFunc ) {
+        
+        var result = {
+            spotNum:    10,
+            comtNum:     125,
+            msgNum:     19,
+        };
+
+        if ( successFunc != undefined && successFunc != null ) {
+
+            successFunc( result );
+
+        } 
+        
+        return result;
+    },
     
 }
