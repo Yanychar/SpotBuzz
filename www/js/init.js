@@ -6,6 +6,7 @@ var tabsList = [
         "Profile"
 ];
 var activeTab = "Map";
+var mapWasRead = false;
 
 function initApplication() {
     console.log( "Init starts ... " );
@@ -20,15 +21,13 @@ function initApplication() {
         setupNavbar();
         
         // Listen for tabs tapping
-        $("#tab_bar a").on("tap", function() {
+        $("#footer a").on("tap", function() {
 
             console.log( "Tap tab: " + $(this).text());
 
             activatePage( $(this) );
 
         });
-
-        activatePage( $("[data-role=navbar] ul").children().first());
 
     });
 
@@ -50,7 +49,6 @@ function setupNavbar( activateTab ) {
     
 }
 
-var mapWasRead = false;
 function activatePage( clickedTab ) {
 	console.log( "Activated tab No.: " + clickedTab.attr( "href" ));
 
@@ -89,5 +87,58 @@ function activatePage( clickedTab ) {
 
 function onDeviceReady() {
 	console.log( "onDeviceReady ... " );
+    
+    updateNavbar();    
+    
+//    activatePage( $("[data-role=navbar] ul").children().first());
+//    activatePage( $( "#maptab" ));
+    
+    
+    activatePage( $("[href=#mapview]"));
+
+    
 }
 
+function updateNavbar() {
+    
+    // Ask data from server
+
+    var status = testComm.testGetStatus( 1, success, fail );
+    
+    function success( result ) {
+        console.log( "Status was read successfully. Status: " + JSON.stringify( result ));
+        
+        // Set values in NavBar icons
+//        setValueInTab( $( "[href=#spotsview]" ), result.spotNum );
+//        setValueInTab( $( "[href=#commentsview]" ), result.comtNum );
+//        setValueInTab( $( "[href=#messagesview]" ), result.msgNum );
+
+        navbar.setCounter( "spotbut", result.spotNum );
+        navbar.setCounter( "commentsbut", result.comtNum );
+        navbar.setCounter( "messagesbut", result.msgNum );
+        
+        
+        
+    };
+    
+    function fail( error ) {
+        console.log( "Failed to read App status from server" );
+    };
+
+    
+}
+
+function setValueInTab( tab, value ) {
+    
+    if ( tab != undefined && tab != null ) {
+        
+        if ( tab != undefined && tab != null ) {
+            // Value != null. Shall be shown
+            tab.text( value );
+        
+        } else {
+            // Value is not defined. Shall be cleared
+            tab.text( "" );
+        }
+    }
+}

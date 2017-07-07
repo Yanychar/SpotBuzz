@@ -27,6 +27,7 @@
     <script src="js/init.js"></script>
     <script src="js/map_view.js"></script>
     <script src="js/spotWindow.js"></script>       
+    <script src="js/navbar.js"></script>
     <script src="resources/strings.js"></script>       
 
 </head>
@@ -109,34 +110,27 @@
             
             
         </div>
-        <div data-role="footer" data-position="fixed" id="footer" class="nav-glyphish-example">
-            <div data-role="navbar" class="nav-glyphish-example">
-                <ul id="tab_bar">
-                    <li><a href="#mapview" data-icon="map">	</a></li>
-                    <li><a href="#spotsview" data-icon="spot"></a></li>
-                    <li><a href="#commentsview" data-icon="comments"                 ></a></li>
-                    <li><a href="#messagesview" data-icon="messages" ></a></li>
-                    <li><a href="#profileview" data-icon="profile" ></a></li>
-                </ul>
-            </div>
+        <div data-role="footer" data-position="fixed" id="footer">
+            <ul>
+                <li>
+                    <a href="#mapview" class="hidden" id="mapbut">	</a>
+                </li>
+                <li>
+                    <a href="#spotsview" class="hidden" id="spotbut"></a>
+                </li>
+
+                <li>
+                    <a href="#commentsview" class="hidden" id="commentsbut"></a>
+                </li>
+                <li>
+                    <a href="#messagesview" class="hidden" id="messagesbut" ></a>
+                </li>
+                <li>
+                    <a href="#profileview" class="hidden" id="profilebut"></a>
+                </li>
+            </ul>
         </div>
     </div>
-<!--
-        
-   <div data-role="footer" data-position="fixed" id="footer" >
-    <div data-role="navbar" class="nav" data-grid="d">
-        <ul>
-            <li><a href="#mapview" id="mapview" data-icon="taifun"></a></li>
-            <li><a href="#noticias" id="noticias" data-icon="taifun">Noticias</a></li>
-            <li><a href="#radio" id="radio" data-icon="taifun">Radio</a></li>
-            <li><a href="#eventos" id="eventos" data-icon="taifun">Eventos</a></li>
-            <li><a href="#more" id="more" data-icon="taifun">More</a></li>
-        </ul>
-    </div>
-   </div>          
-        
-</div>
--->
         
 
 <script>
